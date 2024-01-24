@@ -26,11 +26,22 @@ if [ -z "$DISTRIB_DESCRIPTION" ] && [ -x /usr/bin/lsb_release ]; then
         DISTRIB_DESCRIPTION=$(lsb_release -s -d)
 fi
 
+# Define colors
+BLUE="\033[0;34m"      # Cyberpunk blue
+RESET="\033[0m"        # Reset color to default
+
+# Print the header in default color scheme
 printf "Welcome to the Rift CSA Server: %s (%s %s %s)\n" "$DISTRIB_DESCRIPTION" "$(uname -o)" "$(uname -r)" "$(uname -m)"
+
+# Print the RIFT ASCII art in cyberpunk blue
+printf "${BLUE}"
 printf "\n ____  __  ____  ____ "
 printf "\n(  _ \(  )(  __)(_  _)"
 printf "\n )   / )(  ) _)   )(  "
 printf "\n(__\_)(__)(__)   (__) "
+printf "${RESET}"  # Reset color back to default
+
+# Rest of the text with the default color scheme
 printf "\n\nPlease refer to the terms of service and policies, as well as other information regarding this machine here:"
 printf "\n*This site is still under development, please DM Rachit, Luna, or Tanisha."
 printf "\nhttps://rift24.github.io/RIFT-Frontend/\n"

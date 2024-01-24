@@ -48,4 +48,4 @@ else
     echo "Choose a valid option (dont add extra characters)"
 fi
 
-
+exit 0

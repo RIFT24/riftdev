@@ -21,7 +21,6 @@ snap install certbot --classic
 cd /
 
 mkdir /deployments
-git clone https://github.com/RIFT24/riftdev.git
 
 ufw allow openssh 
 ufw allow 'Nginx Full' 

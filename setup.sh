@@ -13,14 +13,15 @@ read proceed1
 
 sudo -s
 
-echo "Phase 1: Dependences"
+
 apt-get update
-apt-get install docker docker-compose nginx git -y
+apt-get install docker docker-compose nginx git cockpit -y
 snap install certbot --classic
 
 cd /
 
 mkdir /deployments
+git clone https://github.com/RIFT24/riftdev.git
 
 ufw allow openssh 
 ufw allow 'Nginx Full' 

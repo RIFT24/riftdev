@@ -1,7 +1,5 @@
 #!/bin/bash
 
-docker-compose down
-
 # Ask the user for the port to check
 # Get the list of unique ports used by Docker containers
 ports=$(docker ps --format "{{.Ports}}" | awk -F '[,:]+' '{for(i=1;i<=NF;i++) if($i ~ /^[0-9]+->/) print substr($i, 1, index($i,"->")-1)}' | sort -u)
@@ -29,6 +27,3 @@ if $port_found; then
 else
     echo "Port $port_to_check is not used by any Docker container."
 fi
-
-./mvnw clean
-docker-compose up -d --build

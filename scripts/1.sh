@@ -11,24 +11,6 @@ read port
 
 cd /deployments/
 
-
-echo "Now checking your dockerfile. Is your port configured to not overlap with any other deployment ports? Is it a port that is not in use by the system?"
-echo "You may want to choose a port in the 8--- range except for 8085 (ngnix www port)"
-sudo docker ps
-echo -n "Is your port ready for use (YES/NO) <-- Type them out exactly: "
-read use
-
-if [ "$use" == "NO" ]; then
-    echo "Exiting, make sure you change it"
-    exit 1
-elif [ "$use" == "YES" ]; then
-    echo "Continuing..."
-else
-    echo "Please put in a valid input. Terminating the script."
-    exit 1
-fi
-
-
 if [ -d "/deployments/$name" ]; then
     echo "Folder already in use. Rename and try again"
     exit 1
@@ -38,7 +20,7 @@ git clone $link
 
 cd $name
 
-docker-compose up -d --build
+source /riftdev/scripts/build.sh
 
 echo "Container active. Proceeding to verification"
 echo "Make sure this is your homepage"

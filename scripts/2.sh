@@ -5,10 +5,7 @@ read name
 
 cd /deployments/$name/
 
-docker-compose down
-git pull
-./mvnw clean
-docker-compose up -d --build
+source /riftdev/scripts/rebuild.sh
 
 echo -n "Are changes showing up on your website? (YES/NO) <-- Type them out exactly: "
 read page

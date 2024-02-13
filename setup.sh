@@ -11,8 +11,6 @@ echo "This should be an ubuntu 22 server and this script should be run with sudo
 echo -n "Ready to proceed? [Press ENTER]"
 read proceed1
 
-sudo -s
-
 
 apt-get update
 apt-get install docker docker-compose nginx git cockpit -y
@@ -37,7 +35,10 @@ cd /
 
 rm -rf /etc/update-motd.d/00-header
 cp /riftdev/scripts/00-header /etc/update-motd.d/00-header
+chmod +x /etc/update-motd.d/00-header
 mv /etc/update-motd.d/10-* /riftdev/
 mv /etc/update-motd.d/9* /riftdev/
+
+chmod +x /riftdev/scripts/*
 
 echo "Setup Complete" 

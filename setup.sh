@@ -40,8 +40,12 @@ mv /etc/update-motd.d/10-* /riftdev/
 mv /etc/update-motd.d/9* /riftdev/
 
 chmod +x /riftdev/scripts/*
+chmod +x /riftdev/update.sh
 
 cp /riftdev/scripts/build.sh /usr/bin/build
 chmod +x /usr/bin/build
+
+cp /riftdev/scripts/main.sh /usr/bin/rift
+chmod +x /usr/bin/rift
 
 echo "Setup Complete" 

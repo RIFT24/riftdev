@@ -7,7 +7,8 @@ ports=$(docker ps --format "{{.Ports}}" | awk -F '[,:]+' '{for(i=1;i<=NF;i++) if
 # Flag to indicate if the port is found
 port_found=false
 
-dockerfile_path="$(dirname "$(readlink -f "$0")")/Dockerfile"
+# Use the current working directory to find the Dockerfile
+dockerfile_path="$(pwd)/Dockerfile"
 
 # Extract the port using awk
 port_to_check=$(awk '/EXPOSE/ {print $2; exit}' "$dockerfile_path")

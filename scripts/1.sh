@@ -40,9 +40,9 @@ sudo touch /etc/nginx/sites-available/$name
 sudo echo "server {" >> /etc/nginx/sites-available/$name
 sudo echo "   listen 80;" >> /etc/nginx/sites-available/$name
 sudo echo "    listen [::]:80;" >> /etc/nginx/sites-available/$name
-sudo echo "    server_name $domain" >> /etc/nginx/sites-available/$name
+sudo echo "    server_name $domain ;" >> /etc/nginx/sites-available/$name
 sudo echo "    location / { " >> /etc/nginx/sites-available/$name
-sudo echo "        proxy_pass http://localhost:$port" >> /etc/nginx/sites-available/$name
+sudo echo "        proxy_pass http://localhost:$port;" >> /etc/nginx/sites-available/$name
 sudo echo "$(cat /riftdev/scripts/nginx_sample_config_end)" >> /etc/nginx/sites-available/$name
 
 cd /

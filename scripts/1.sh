@@ -66,4 +66,7 @@ echo "Restarting nginx..."
 sudo service nginx restart
 sudo service nginx status
 
+echo "Certbot Configuration"
+certbot --nginx
+
 echo "Deployment script complete. Your site should now be live"

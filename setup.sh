@@ -13,7 +13,7 @@ read proceed1
 
 
 apt-get update
-apt-get install docker docker-compose nginx git cockpit -y
+apt-get install docker docker-compose nginx git cockpit maven -y
 snap install certbot --classic
 
 cd /
